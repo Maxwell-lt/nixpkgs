@@ -136,16 +136,17 @@ in stdenv.mkDerivation rec {
     "--disable-libmpv-static"
     "--disable-static-build"
     "--disable-build-date" # Purity
-    (enableFeature archiveSupport  "libarchive")
-    (enableFeature cddaSupport     "cdda")
-    (enableFeature dvdnavSupport   "dvdnav")
-    (enableFeature openalSupport   "openal")
-    (enableFeature sambaSupport    "libsmbclient")
-    (enableFeature sdl2Support     "sdl2")
-    (enableFeature sndioSupport    "sndio")
-    (enableFeature vaapiSupport    "vaapi")
-    (enableFeature waylandSupport  "wayland")
-    (enableFeature stdenv.isLinux  "dvbin")
+    (enableFeature archiveSupport     "libarchive")
+    (enableFeature cddaSupport        "cdda")
+    (enableFeature dvdnavSupport      "dvdnav")
+    (enableFeature openalSupport      "openal")
+    (enableFeature sambaSupport       "libsmbclient")
+    (enableFeature sdl2Support        "sdl2")
+    (enableFeature sndioSupport       "sndio")
+    (enableFeature vaapiSupport       "vaapi")
+    (enableFeature waylandSupport     "wayland")
+    (enableFeature stdenv.isLinux     "dvbin")
+    (enableFeature vapoursynthSupport "vapoursynth")
   ] # Disable whilst Swift isn't supported
     ++ stdenv.lib.optional (!swiftSupport) "--disable-macos-cocoa-cb";
 
